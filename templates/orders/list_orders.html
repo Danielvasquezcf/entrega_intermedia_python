@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+  Orders
+{% endblock %}
+{% block content %}
+    <h1>Hello from your orders list!!</h1>
+    {% for order in orders %}
+    <div class="card" style="width: 18rem;">
+      <img src="https://assets.reebok.com/images/w_600,f_auto,q_auto/028dacf0484d4588ae52ab3e00d4843a_9366/Camiseta_Reebok_CrossFit(r)_Games_Crest_Azul_FU1869_13_standard.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">The client is: {{order.client}}</h5>
+        <p class="card-text"> bought the product {{order.product}} on {{order.creation_time}}</p>
+        <p>the payment was made with {{order.payment_method}}</p>
+        <a href="#" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+    {% endfor %}
+    {% endblock %}

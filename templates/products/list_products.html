@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+ Products
+{% endblock %}
+{% block content %}
+
+  
+    <h1>Hello from your products list!!</h1>
+    <h2> Create a new product</h2> <a href="/products/create-product/" class="btn btn-primary">Create</a> 
+    {% for product in products %}
+    <div class="card" style="width: 18rem;">
+      <img src="https://assets.reebok.com/images/w_600,f_auto,q_auto/028dacf0484d4588ae52ab3e00d4843a_9366/Camiseta_Reebok_CrossFit(r)_Games_Crest_Azul_FU1869_13_standard.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">Price: ${{product.price}}      </p>
+        {% if product.stock == True %}
+            <p>On stock</p>
+       {% else %}
+            <p>Currently out of stock</p>
+        {% endif %}
+        <a href="#" class="btn btn-primary">Add to cart</a>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% endblock %}
+
+
+   

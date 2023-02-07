@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Categories
+{% endblock %}
+{% block content %}
+
+  <h1>Hello from your categories list!!</h1>
+
+  {% for category in categories %}
+
+     <p>The name of the category is: {{category.name}}</p> 
+     
+
+  {% endfor %}
+  {% endblock %}
